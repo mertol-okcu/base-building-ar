@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="javascript.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Base Bulding AR</title>
+    <link rel="stylesheet" href="global_styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script type="module" src="lib/main.js"></script>
+  </head>
+  <body>
+    <div id="active-view"></div>
+    <template id="nav-bar">
+      <div
+        style="
+          text-align: left;
+          padding: 0 16px;
+          height: 64px;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <h3 style="display: inline-block">Base Building AR</h3>
+        <button
+          id="logout-button"
+          style="display: inline-block; margin-left: auto"
+        >
+          Logout
+        </button>
+      </div>
+    </template>
+    <template id="auth-page">
+      <div style="text-align: center; padding-top: 100px">
+        <button id="login-button">Login</button>
+      </div>
+    </template>
+    <template id="map-page">
+      <div id="map" style="height: calc(100vh - 64px); z-index: 1"></div>
+      <h1
+        id="loading-indicator"
+        style="
+          display: inline-block;
+          color: #000;
+          position: absolute;
+          z-index: 2;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%);
+        "
+      >
+        Finding Your Location...
+      </h1>
+      <button
+        id="deploy-base-button"
+        style="
+          display: block;
+          position: absolute;
+          bottom: 10vh;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 2;
+        "
+      >
+        Deploy Base Here!!!
+      </button>
+    </template>
+    <template id="base-page">
+      <canvas style="position: absolute; top: 0; left: 0; z-index: 1"></canvas>
+    </template>
+  </body>
+</html>
